@@ -4,7 +4,7 @@ public static void main(String[] args) {
 	 Cat rob = new Cat("rob");
 	 rob.meow();
 	 rob.printName();
-	 for(int i= 0; i<=90; i++) {
+	 for(int i= 0; i<=8; i++) {
 	 rob.kill();
 	 }
 }
