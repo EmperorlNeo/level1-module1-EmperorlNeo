@@ -10,29 +10,29 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class BinaryConverter implements ActionListener {
+	 JFrame frame = new JFrame();
+	 JPanel panel = new JPanel();
 	 JLabel label = new JLabel();
 	 JTextField numbers = new JTextField(8);
-	 String bi = numbers.getText();
+	 JButton button = new JButton();
+	 
 public static void main(String[] args) {
 new BinaryConverter().createUI();
 	
 }
 	  private void createUI() {
 	// TODO Auto-generated method stub
-		  JFrame frame = new JFrame();
 			frame.setVisible(true);
 			frame.setSize(700, 200);
 			frame.setLocation(600, 500);
 			frame.setTitle("Convert 8 bits of binary ASCII");
-			JPanel panel = new JPanel();
 			frame.add(panel);
 			panel.add(numbers);
 			numbers.setLocation(10, 10);
-			System.out.println(bi);
+		//	System.out.println(bi);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			JButton button = new JButton();
 			panel.add(button);
-			button.addActionListener(null);
+			button.addActionListener(this);
 			button.setText("Convert");
 			button.setSize(20, 15);
 			panel.add(label);
@@ -62,6 +62,8 @@ new BinaryConverter().createUI();
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
+	String bi = numbers.getText();
+	System.out.println(bi);
 	String nary = convert(bi);
 	label.setText(nary);
 }
